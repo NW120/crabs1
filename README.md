@@ -13,13 +13,13 @@ Dependencies:
 call: 
 Side effects: 
 
-getTranslation:
-Purpose: 
-Dependencies: 
-call: 
-Side effects: 
+crabs: void -> void <br>
+Purpose: to run every other program for the goal of rendering and proscessing the entire game. First it draws the map and then it draws the captain in the correct position. <br>
+Dependencies: every other program (only calls drawCapt and drawMap) <br>
+call: crabs() <br>
+Side effects: none :3 <br>
 
-getTranslation:
+drawCapt: int, int, int, int -> list of ints
 Purpose: 
 Dependencies: 
 call: 
