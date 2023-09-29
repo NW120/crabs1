@@ -13,8 +13,8 @@ capt = getCapt(sizeCapt);
 
 % TODO : Rotate captain from zero heading to heading thetaCapt
 
-%R = getRotation(thetaCapt);
-%capt = R*capt;
+R = getRotation(thetaCapt);
+capt = R*capt;
 
 % TODO : Shift the captain from (0 , 0) to (xCapt , yCapt)
 
