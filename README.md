@@ -16,12 +16,12 @@ drawLine: point(x, y), point(x, y), color -> handle <br>
 Purpose: this takes in two points, and outputs a line between them <br>
 Dependencies: nothing <br>
 call: drawLine((1,1), (1,1) 'k') <br>
-Side effects: none <br>
+Side effects: It outputs a line to the screen for whichever points are called. <br>
 
-drawMap: string -> int, int
-Purpose: this takes the image name inputted and returns the size of the image as ints.
-Dependencies: none
-call: drawMap("BGImage");
+drawMap: string -> int, int <br>
+Purpose: this takes the image name inputted and returns the size of the image as ints. <br>
+Dependencies: none <br>
+call: drawMap("BGImage"); <br>
 Side effects: 
 
 getCapt: 
@@ -38,8 +38,8 @@ call: T = getTranslation(4, 5) -> [1, 0, 4; 0, 1, 5; 0, 0, 1] <br>
 Side effects: none <br>
 
 getRotation: int -> matrix <br>
-Purpose: the int is the angle a matrix should be rotated by around the origin, while ensuring the scale stays the same.
-Dependencies: none
-call: getRotation(rotation angle) -> [cos(rotation angle), -sin(rotation angle), 0; sin(rotation angle), cos(rotation angle), 0; 0, 0, 1];
-Side effects: none
+Purpose: the int is the angle a matrix should be rotated by around the origin, while ensuring the scale stays the same. <br>
+Dependencies: none <br>
+call: getRotation(rotation angle) -> [cos(rotation angle), -sin(rotation angle), 0; sin(rotation angle), cos(rotation angle), 0; 0, 0, 1]; <br>
+Side effects: none <br>
 
