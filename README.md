@@ -10,25 +10,25 @@ drawCapt: int, int, int, int -> list of ints <br>
 Purpose: To render the captain correctly, first by calling getCapt to get the correct capt points, then it multiplies capt's points by code which moves and rotates the captain, then it draws lines between all the captain's points to draw him in the correct shape. <br>
 Dependencies: getCapt(), getRotation(), getTranslation() <br>
 call: drawCapt(capt x position, capt y position, capt direction, capt size) -> returns list of the graphics that make up the captain <br>
-Side effects: none <br>
+Side effects: this draws the entire captain to the screen <br>
 
 drawLine: point(x, y), point(x, y), color -> handle <br>
 Purpose: this takes in two points, and outputs a line between them <br>
 Dependencies: nothing <br>
 call: drawLine((1,1), (1,1) 'k') <br>
-Side effects: It outputs a line to the screen for whichever points are called. <br>
+Side effects: It outputs a line to the screen which connects the points inputted <br>
 
 drawMap: string -> int, int <br>
 Purpose: this takes the image name inputted and returns the size of the image as ints. <br>
 Dependencies: none <br>
 call: drawMap("BGImage"); <br>
-Side effects: 
+Side effects: It creates the "arena" of the background image with the title at the top <br>
 
-getCapt: 
-Purpose: 
-Dependencies: 
-call: 
-Side effects: 
+getCapt: int -> matrix <br>
+Purpose: Returns the points that make up the captain, scaled to whatever multiple is inputted <br>
+Dependencies: none <br>
+call: getCapt(50); <br>
+Side effects: none <br>
 
 getTranslation: number, number -> matrix <br>
 Purpose: Number1 and Number2 represent the displacement (in x and y, respectively) to shift a shape from the origin. <br>
