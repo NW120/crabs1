@@ -13,9 +13,9 @@ function crabs ()
 
 
 % Initialize captain location, heading and size
-xCapt = 150;
+xCapt = 1000;
 yCapt = 1000;
-thetaCapt = 0;
+thetaCapt = -pi/2;
 sizeCapt = 50;
 
 % Draw the captain and initialize graphics handles
@@ -26,23 +26,23 @@ captGraphics = drawCapt(xCapt, yCapt, thetaCapt, sizeCapt);
 cmd="null";
 
 while(cmd != "q")
-cmd = kbhit();
+  cmd = kbhit();
 
-if(cmd=="w" ||  cmd == "a" ||  cmd == "d")
+  if(cmd=="w" ||  cmd == "a" ||  cmd == "d")
 
 % erase old captain
-for i=1:length(captGraphics)
-  set(captGraphics(i),'Visible','off');
-  endfor
+    for i=1:length(captGraphics)
+      set(captGraphics(i),'Visible','off');
+    endfor
 
 
 % move captain
-%moveCapt(cmd);
+    [xCapt, yCapt, thetaCapt] = moveCapt(cmd, xCapt, yCapt, mapWidth, mapHeight, thetaCapt);
 
 %draw new captain
-captGraphics = drawCapt(xCapt, yCapt, thetaCapt, sizeCapt);
+    captGraphics = drawCapt(xCapt, yCapt, thetaCapt, sizeCapt);
 
-endif
+  endif
 
 endwhile
 
