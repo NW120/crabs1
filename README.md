@@ -43,3 +43,15 @@ Dependencies: none <br>
 call: getRotation(rotation angle) -> [cos(rotation angle), -sin(rotation angle), 0; sin(rotation angle), cos(rotation angle), 0; 0, 0, 1]; <br>
 Side effects: none <br>
 
+isOnMap: int, int, int, int -> boolean <br>
+Purpose: if the x position would be bigger than the horizontal border or the y position would be bigger than the vertical border or either value would be less than zero, then it returns false, otherwise it returns true <br>
+Dependencies: none <br>
+Call: isOnMap(100, 200, 2600, 4000) -> true <br>
+Side effects: none <br>
+
+moveCapt: char, int, int, int, int, angle?? -> int, int, int <br>
+Purpose: this function looks at the keyboard key input and returns the updated position which takes this input into account <br>
+Dependencies: isOnMap() <br>
+Call: moveCapt('w', 100, 200, 2600, 4000, 4pi/6) -> 150, 150, 4pi/6 <br>
+Side effects: none <br>
+
