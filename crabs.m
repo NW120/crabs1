@@ -16,7 +16,7 @@ function crabs ()
 xCapt = 1000;
 yCapt = 1000;
 thetaCapt = -pi/2;
-sizeCapt = 50;
+sizeCapt = 25;
 
 % Draw the captain and initialize graphics handles
 %*********************************************************
