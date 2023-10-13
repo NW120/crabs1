@@ -21,6 +21,7 @@ sizeCapt = 25;
 % Draw the captain and initialize graphics handles
 %*********************************************************
 captGraphics = drawCapt(xCapt, yCapt, thetaCapt, sizeCapt);
+crabGraphics = drawCrab(500, 500, -pi/2, 200);
 %*******************************************************
 
 cmd="null";

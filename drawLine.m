@@ -3,7 +3,7 @@ function handle = drawLine (p, q, color)
 x=[p(1);q(1)];
 y=[p(2);q(2)];
 handle = plot(x,y,color);
-set(handle, "LineWidth", 2);
+set(handle, "LineWidth", 1);
 
 %{
 x= -10:0.05:10;
