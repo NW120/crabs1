@@ -18,10 +18,16 @@ yCapt = 1000;
 thetaCapt = -pi/2;
 sizeCapt = 25;
 
+% Initialize crab location, heading and size
+xCrab = 1000;
+yCrab = 500;
+thetaCrab = -pi/2;
+sizeCrab = 25;
+
 % Draw the captain and initialize graphics handles
 %*********************************************************
 captGraphics = drawCapt(xCapt, yCapt, thetaCapt, sizeCapt);
-crabGraphics = drawCrab(500, 500, -pi/2, 200);
+crabGraphics = drawCrab(xCrab, yCrab, thetaCrab, sizeCrab);
 %*******************************************************
 
 cmd="null";
@@ -42,6 +48,22 @@ while(cmd != "q")
 
 %draw new captain
     captGraphics = drawCapt(xCapt, yCapt, thetaCapt, sizeCapt);
+
+endif
+
+  if(cmd=="i" ||  cmd == "j" ||  cmd == "l" ||  cmd == "k" ||  cmd == ",")
+
+% erase old captain
+    for i=1:length(crabGraphics)
+      set(crabGraphics(i),'Visible','off');
+    endfor
+
+
+% move captain
+    [xCrab, yCrab, thetaCrab] = moveCrab(cmd, xCrab, yCrab, mapWidth, mapHeight, thetaCrab);
+
+%draw new captain
+    crabGraphics = drawCrab(xCrab, yCrab, thetaCrab, sizeCrab);
 
   endif
 
