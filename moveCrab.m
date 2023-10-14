@@ -17,20 +17,20 @@ function [xCrab, yCrab, thetaCrab] = moveCrab (cmd, x, y, width, height, theta)
     endif
 
 
-  elseif(cmd == ",")
+  elseif(cmd == "u")
     thetaCrab = theta - dTheta;
     xCrab=x;
     yCrab=y;
 
 
-  elseif(cmd == "i")
+  elseif(cmd == "o")
     thetaCrab = theta + dTheta;
     xCrab=x;
     yCrab=y;
 
   elseif ( cmd == "j")
     xTemp = x + (sin(theta) * dStep);
-    yTemp = y + (cos(theta) * dStep);
+    yTemp = y - (cos(theta) * dStep);
     thetaCrab = theta;
     if(isOnMap(xTemp, yTemp, width, height))
       xCrab = xTemp;
@@ -42,7 +42,7 @@ function [xCrab, yCrab, thetaCrab] = moveCrab (cmd, x, y, width, height, theta)
 
   elseif ( cmd == "l")
     xTemp = x - (sin(theta) * dStep);
-    yTemp = y - (cos(theta) * dStep);
+    yTemp = y + (cos(theta) * dStep);
     thetaCrab = theta;
     if(isOnMap(xTemp, yTemp, width, height))
       xCrab = xTemp;

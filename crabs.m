@@ -51,7 +51,7 @@ while(cmd != "q")
 
 endif
 
-  if(cmd=="i" ||  cmd == "j" ||  cmd == "l" ||  cmd == "k" ||  cmd == ",")
+  if(cmd=="u" ||  cmd == "j" ||  cmd == "l" ||  cmd == "k" ||  cmd == "o")
 
 % erase old captain
     for i=1:length(crabGraphics)
