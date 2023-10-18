@@ -30,6 +30,12 @@ Dependencies: none <br>
 call: getCapt(50); <br>
 Side effects: none <br>
 
+getCapt: int -> matrix <br>
+Purpose: Returns the points that make up the crab, scaled to whatever multiple is inputted <br>
+Dependencies: none <br>
+call: getCrab(50); <br>
+Side effects: none <br>
+
 getTranslation: number, number -> matrix <br>
 Purpose: Number1 and Number2 represent the displacement (in x and y, respectively) to shift a shape from the origin. <br>
 getTranslation uses these numbers to create a 3X3 matrix that will translate an object stored as a 3XN matrix when it multiplies the object matrix. <br>
@@ -49,9 +55,15 @@ Dependencies: none <br>
 Call: isOnMap(100, 200, 2600, 4000) -> true <br>
 Side effects: none <br>
 
-moveCapt: char, int, int, int, int, angle?? -> int, int, int <br>
+moveCapt: char, int, int, int, int, int -> int, int, int <br>
 Purpose: this function looks at the keyboard key input and returns the updated position which takes this input into account <br>
 Dependencies: isOnMap() <br>
 Call: moveCapt('w', 100, 200, 2600, 4000, 4pi/6) -> 150, 150, 4pi/6 <br>
+Side effects: none <br>
+
+moveCrab: char, int, int, int, int, int -> int, int, int <br>
+Purpose: this function looks at the keyboard key input and returns the updated position which takes this input into account <br>
+Dependencies: isOnMap() <br>
+Call: moveCrab('j', 100, 200, 2600, 4000, 4pi/6) -> 150, 150, 4pi/6 <br>
 Side effects: none <br>
 
