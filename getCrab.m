@@ -10,22 +10,22 @@ function crab = getCrab(crabSize)
   p6 = [1.5*crabSize; -0.5*crabSize; 1];
 
   % right leg
-  p7 = [0; 1.25*crabSize; 1];
-  p8 = [-crabSize; 1.5*crabSize; 1];
+  p7 = [0.25*crabSize; 1.25*crabSize; 1];
+  p8 = [-crabSize; 2*crabSize; 1];
 
 
   % left leg
-  p9 = [0; -1.25*crabSize; 1];
-  p10 = [-crabSize; -1.5*crabSize; 1];
+  p9 = [0.25*crabSize; -1.25*crabSize; 1];
+  p10 = [-crabSize; -2*crabSize; 1];
 
   % right leg 2
-  p11 = [-0.50*crabSize; 1.25*crabSize; 1];
-  p12 = [-1.5*crabSize; 1.5*crabSize; 1];
+  p11 = [-0.25*crabSize; 1.25*crabSize; 1];
+  p12 = [-1.5*crabSize; 1.75*crabSize; 1];
 
 
   % left leg 2
-  p13 = [-0.50*crabSize; -1.25*crabSize; 1];
-  p14 = [-1.5*crabSize; -1.5*crabSize; 1];
+  p13 = [-0.25*crabSize; -1.25*crabSize; 1];
+  p14 = [-1.5*crabSize; -1.75*crabSize; 1];
 
 
   crab=[p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14];

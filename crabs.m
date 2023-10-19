@@ -39,7 +39,7 @@ while(cmd != "q")
 
 % erase old captain
     for i=1:length(captGraphics)
-      set(captGraphics(i),'Visible','off');
+      delete(captGraphics(i));
     endfor
 
 
@@ -55,7 +55,7 @@ endif
 
 % erase old captain
     for i=1:length(crabGraphics)
-      set(crabGraphics(i),'Visible','off');
+      delete(captGraphics(i));
     endfor
 
 
