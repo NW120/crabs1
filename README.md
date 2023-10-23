@@ -24,6 +24,12 @@ Dependencies: none <br>
 call: drawMap("BGImage"); <br>
 Side effects: It creates the "arena" of the background image with the title at the top <br>
 
+drawShark: int, int, int, int -> list of ints <br>
+Purpose: To render the shark correctly, first, it calls getShark to get the correct capt points, then it multiplies the sharks's points to move and rotate his position, then it draws lines between all the shark's points <br>
+Dependencies: getShark(), getRotation(), getTranslation() <br>
+call: drawShark(shark x position, shark y position, shark direction, shark size) -> returns list of lines which make up the shark <br>
+Side effects: this draws the entire shark to the screen <br>
+
 getCapt: int -> matrix <br>
 Purpose: Returns the points that make up the captain, scaled to whatever multiple is inputted <br>
 Dependencies: none <br>
@@ -49,6 +55,12 @@ Dependencies: none <br>
 call: getRotation(rotation angle) -> [cos(rotation angle), -sin(rotation angle), 0; sin(rotation angle), cos(rotation angle), 0; 0, 0, 1]; <br>
 Side effects: none <br>
 
+getShark: int -> matrix <br>
+Purpose: Returns the points that make up the shark, scaled to whatever multiple is inputted <br>
+Dependencies: none <br>
+call: getShark(50); <br>
+Side effects: none <br>
+
 isOnMap: int, int, int, int -> boolean <br>
 Purpose: if the x position would be bigger than the horizontal border or the y position would be bigger than the vertical border or either value would be less than zero, then it returns false, otherwise it returns true <br>
 Dependencies: none <br>
@@ -67,3 +79,8 @@ Dependencies: isOnMap() <br>
 Call: moveCrab('j', 100, 200, 2600, 4000, 4pi/6) -> 150, 150, 4pi/6 <br>
 Side effects: none <br>
 
+moveShark: int, int, int, int, int, int -> int, int, int, int <br>
+Purpose: this function looks returns the updated position of the shark, taking into account the direction he is going in <br>
+Dependencies: none <br>
+Call: moveShark( 100, 200, 2600, 4000, 4pi/6, 0) -> 150, 150, 5pi/6 <br>
+Side effects: none <br>
