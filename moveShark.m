@@ -11,10 +11,13 @@ function [xShark, yShark, thetaShark, sharkDir] = moveShark (x, y, width, height
       %disp("shark on left going right");
       sharkDir = 0;
       xShark =  -50;
+      thetaShark = 0;
+
     else
       %disp("shark on right going left");
       sharkDir = 1;
       xShark = width + 50;
+      thetaShark = pi;
     endif
     yShark = rand*height;
     thetaShark = 0;

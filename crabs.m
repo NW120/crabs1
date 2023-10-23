@@ -98,7 +98,7 @@ endif
 
   endif
   fflush(stdout);
-  pause(.2)
+  pause(.3)
 
 endwhile
 
