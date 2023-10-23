@@ -1,6 +1,6 @@
 function [xShark, yShark, thetaShark, sharkDir] = moveShark (x, y, width, height, theta, dir)
   %initalize variables
-  dStep = 20;
+  dStep = 30;
   dTheta = pi/64;
   %in case bro is off the edge
   temp = (rand*20)-10;

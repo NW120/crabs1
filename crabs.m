@@ -25,7 +25,7 @@ thetaCrab = -pi/2;
 sizeCrab = 25;
 
 
-yShark = 750;
+yShark = rand * mapHeight;
 thetaShark = 0;
 sizeShark = 25;
 temp = rand;
@@ -98,7 +98,7 @@ endif
 
   endif
   fflush(stdout);
-  pause(.01)
+  pause(.2)
 
 endwhile
 
