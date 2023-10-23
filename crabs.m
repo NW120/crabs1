@@ -24,20 +24,52 @@ yCrab = 500;
 thetaCrab = -pi/2;
 sizeCrab = 25;
 
+
+yShark = 750;
+thetaShark = 0;
+sizeShark = 25;
+temp = rand;
+sharkDir = 0;
+if (temp < 0.5)
+    sharkDir = 0;
+    xShark = -50;
+  else
+    sharkDir = 1;
+    xShark = mapWidth + 50;
+  endif
+
 % Draw the captain and initialize graphics handles
 %*********************************************************
 captGraphics = drawCapt(xCapt, yCapt, thetaCapt, sizeCapt);
 crabGraphics = drawCrab(xCrab, yCrab, thetaCrab, sizeCrab);
+sharkGraphics = drawShark(xShark, yShark, thetaShark, sizeShark);
 %*******************************************************
 
 cmd="null";
 
-while(cmd != "q")
-  cmd = kbhit();
+while(1)
+
+  cmd = kbhit(1);
+  if (cmd == 'q')
+    break
+  endif
+
+  for i=1:length(sharkGraphics)
+      delete(sharkGraphics(i));
+    endfor
+
+
+% move shark
+    %disp("before: "),disp(sharkDir)
+    [xShark, yShark, thetaShark, sharkDir] = moveShark(xShark, yShark, mapWidth, mapHeight, thetaShark, sharkDir);
+    %disp("after:"), disp(sharkDir)
+
+%draw new shark
+    sharkGraphics = drawShark(xShark, yShark, thetaShark, sizeShark);
 
   if(cmd=="w" ||  cmd == "a" ||  cmd == "d")
 
-% erase old captain
+% erase old shark
     for i=1:length(captGraphics)
       delete(captGraphics(i));
     endfor
@@ -53,19 +85,20 @@ endif
 
   if(cmd=="u" ||  cmd == "j" ||  cmd == "l" ||  cmd == "k" ||  cmd == "o")
 
-% erase old captain
+% erase old crab
     for i=1:length(crabGraphics)
-      delete(captGraphics(i));
+      delete(crabGraphics(i));
     endfor
 
-
-% move captain
+% move crab
     [xCrab, yCrab, thetaCrab] = moveCrab(cmd, xCrab, yCrab, mapWidth, mapHeight, thetaCrab);
 
-%draw new captain
+%draw new crab
     crabGraphics = drawCrab(xCrab, yCrab, thetaCrab, sizeCrab);
 
   endif
+  fflush(stdout);
+  pause(.01)
 
 endwhile
 
