@@ -1,6 +1,6 @@
 function [xShark, yShark, thetaShark, sharkDir] = moveShark (x, y, width, height, theta, dir)
   %initalize variables
-  dStep = 30;
+  dStep = 40;
   dTheta = pi/64;
   %in case bro is off the edge
   temp = (rand*20)-10;
@@ -12,7 +12,6 @@ function [xShark, yShark, thetaShark, sharkDir] = moveShark (x, y, width, height
       sharkDir = 0;
       xShark =  -50;
       thetaShark = 0;
-
     else
       %disp("shark on right going left");
       sharkDir = 1;
@@ -20,7 +19,6 @@ function [xShark, yShark, thetaShark, sharkDir] = moveShark (x, y, width, height
       thetaShark = pi;
     endif
     yShark = rand*height;
-    thetaShark = 0;
     %otherwise...
   else
     %determines x movement
@@ -31,6 +29,7 @@ function [xShark, yShark, thetaShark, sharkDir] = moveShark (x, y, width, height
       %disp("going left");
       xShark = x - dStep;
     endif
+
     %randomizes the y movement
     yShark = y + temp;
     if (temp > 0)

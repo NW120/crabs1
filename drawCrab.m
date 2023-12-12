@@ -1,4 +1,4 @@
-function crabGraphics = drawCrab(xCrab, yCrab, thetaCrab, sizeCrab)
+function [crabGraphics, xNet, yNet] = drawCrab(xCrab, yCrab, thetaCrab, sizeCrab)
 
 
 
